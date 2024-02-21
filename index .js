@@ -23,14 +23,7 @@ for (let i of stringNumber) {
     numberArray.push(num);
   }
 }
-// console.time('Tiempo');
-// // Sort the data using insertion sort
-// const sortedData = insertionSort(numberArray);
 
-// // Output the sorted data
-// console.log("Sorted data:", sortedData);
-
-// console.timeEnd('Tiempo');
 
 const startTime = performance.now();
 const sortedData = insertionSort(numberArray);
