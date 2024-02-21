@@ -17,7 +17,7 @@ const selection = arr => {
     return arr;
   };
   
-  
+
 let numberArray = [];
 for (let i of stringNumber) {
   let num = Number(i);
@@ -27,7 +27,7 @@ for (let i of stringNumber) {
 }
 
 const startTime = performance.now();
-const sortedData = bubble(numberArray);
+const sortedData = selection(numberArray);
 const endTime = performance.now();
 const runtime = endTime - startTime;
 
