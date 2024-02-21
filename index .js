@@ -24,7 +24,6 @@ for (let i of stringNumber) {
   }
 }
 
-
 const startTime = performance.now();
 const sortedData = insertionSort(numberArray);
 const endTime = performance.now();
