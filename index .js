@@ -1,15 +1,6 @@
-const fs = require('fs');
-
-// Function to read the content of the text file
-function readTextFile(numerosRandom) {
-    try {
-        const data = fs.readFileSync(numerosRandom, 'utf8');
-        return data.split('\n').map(line => line.trim()); // Assuming each line contains one piece of information
-    } catch (err) {
-        console.error('Error reading the file:', err);
-        return [];
-    }
-}
+const fs = require("fs");
+const readNumber = fs.readFileSync("num-aleat.txt").toString();
+const stringNumber = readNumber.split(",");
 
 // Function to perform insertion sort
 function insertionSort(arr) {
@@ -25,12 +16,29 @@ function insertionSort(arr) {
     return arr;
 }
 
-// Read data from the text file
-const numerosRandom = 'num-aleat.txt'; // Update with your file name
-const data = readTextFile(numerosRandom);
+let numberArray = [];
+for (let i of stringNumber) {
+  let num = Number(i);
+  if (!isNaN(num)) {
+    numberArray.push(num);
+  }
+}
+// console.time('Tiempo');
+// // Sort the data using insertion sort
+// const sortedData = insertionSort(numberArray);
 
-// Sort the data using insertion sort
-const sortedData = insertionSort(data);
+// // Output the sorted data
+// console.log("Sorted data:", sortedData);
 
-// Output the sorted data
-console.log("Sorted data:", sortedData);
+// console.timeEnd('Tiempo');
+
+const startTime = performance.now();
+const sortedData = insertionSort(numberArray);
+const endTime = performance.now();
+const runtime = endTime - startTime;
+
+console.log(sortedData);
+
+
+console.log("Runtime:", runtime, "milliseconds");
+
